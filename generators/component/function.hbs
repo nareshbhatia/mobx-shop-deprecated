@@ -1,0 +1,24 @@
+import React from 'react';
+import { withStyles } from 'material-ui/styles';
+import Typography from 'material-ui/Typography';
+import PropTypes from 'prop-types';
+
+const styles = theme => ({
+    root: {
+        padding: theme.spacing.unit
+    }
+});
+
+function {{ properCase componentName }}Base({ classes, dummy }) {
+    return (
+        <div className={classes.root}>
+            <Typography type="title">{{ properCase componentName }}{dummy}</Typography>
+        </div>
+    );
+}
+
+{{ properCase componentName }}Base.propTypes = {
+    dummy: PropTypes.string
+};
+
+export const {{ properCase componentName }} = withStyles(styles)({{ properCase componentName }}Base);
