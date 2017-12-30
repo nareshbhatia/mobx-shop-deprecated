@@ -1,8 +1,8 @@
 import { action, observable } from 'mobx';
 import { newState } from 'mobx-state-router';
 
-export const defaultState = newState('home');
-export const signin = newState('signin');
+const defaultState = newState('home');
+const signin = newState('signin');
 
 export class AuthStore {
     rootStore;

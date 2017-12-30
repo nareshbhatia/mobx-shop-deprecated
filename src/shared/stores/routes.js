@@ -13,6 +13,8 @@ const checkForUserSignedIn = (fromState, toState, routerStore) => {
     }
 };
 
+// Note: The routes are matched from top to bottom.
+// Make sure they are sequenced in the order of priority.
 export const routes = [
     {
         name: 'home',
@@ -27,7 +29,7 @@ export const routes = [
     {
         name: 'checkout',
         pattern: '/checkout',
-        onBeforeEnter: checkForUserSignedIn
+        beforeEnter: checkForUserSignedIn
     },
     {
         name: 'departments',
@@ -35,8 +37,8 @@ export const routes = [
         onEnter: (fromState, toState, routerStore) => {
             const { rootStore: { itemStore } } = routerStore;
             return itemStore
-            .loadDepartmentItems(toState.params.id)
-            .then(() => ({ fromState, toState }));
+                .loadDepartmentItems(toState.params.id)
+                .then(() => ({ fromState, toState }));
         }
     },
     {
@@ -53,7 +55,7 @@ export const routes = [
     {
         name: 'profile',
         pattern: '/profile',
-        onBeforeEnter: checkForUserSignedIn
+        beforeEnter: checkForUserSignedIn
     },
     { name: 'shoppingCart', pattern: '/shopping-cart' },
     { name: 'signin', pattern: '/signin' }
