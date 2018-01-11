@@ -1,6 +1,6 @@
 import React from 'react';
 import { inject } from 'mobx-react';
-import { ItemList, Page, ScrollingContent } from 'shared/components';
+import { ItemList, HeaderLayout, ScrollingContent } from 'shared/components';
 import { NavBar } from './navbar';
 
 @inject('rootStore')
@@ -9,12 +9,12 @@ export class DepartmentsPage extends React.Component {
         const { rootStore } = this.props;
 
         return (
-            <Page>
+            <HeaderLayout>
                 <NavBar rootStore={rootStore} />
                 <ScrollingContent>
                     <ItemList rootStore={rootStore} />
                 </ScrollingContent>
-            </Page>
+            </HeaderLayout>
         );
     }
 }

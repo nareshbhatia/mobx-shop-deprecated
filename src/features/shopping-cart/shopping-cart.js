@@ -1,6 +1,6 @@
 import React from 'react';
 import { inject } from 'mobx-react';
-import { Cart, Page, ScrollingContent } from 'shared/components';
+import { Cart, HeaderLayout, ScrollingContent } from 'shared/components';
 
 @inject('rootStore')
 export class ShoppingCart extends React.Component {
@@ -8,11 +8,11 @@ export class ShoppingCart extends React.Component {
         const { rootStore } = this.props;
 
         return (
-            <Page>
+            <HeaderLayout>
                 <ScrollingContent>
                     <Cart rootStore={rootStore} />
                 </ScrollingContent>
-            </Page>
+            </HeaderLayout>
         );
     }
 }

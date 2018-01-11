@@ -3,10 +3,10 @@ import { withStyles } from 'material-ui/styles';
 import { inject, observer } from 'mobx-react';
 import {
     BackButton,
+    HeaderLayout,
     ItemInfo,
     ItemOrder,
     ItemPhoto,
-    Page,
     ScrollingContent
 } from 'shared/components';
 
@@ -30,7 +30,7 @@ class ItemPageBase extends React.Component {
         }
 
         return (
-            <Page NavButton={BackButton}>
+            <HeaderLayout NavButton={BackButton}>
                 <ScrollingContent>
                     <div className={classes.item}>
                         <ItemPhoto photo={item.photo} />
@@ -38,7 +38,7 @@ class ItemPageBase extends React.Component {
                         <ItemOrder rootStore={rootStore} item={item} />
                     </div>
                 </ScrollingContent>
-            </Page>
+            </HeaderLayout>
         );
     }
 }

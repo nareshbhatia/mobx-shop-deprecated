@@ -1,7 +1,7 @@
 import React from 'react';
 import Typography from 'material-ui/Typography';
 import { inject } from 'mobx-react';
-import { ItemList, Page, ScrollingContent } from 'shared/components';
+import { ItemList, HeaderLayout, ScrollingContent } from 'shared/components';
 
 const styles = {
     title: {
@@ -15,14 +15,14 @@ export class HomePage extends React.Component {
     render() {
         const { rootStore } = this.props;
         return (
-            <Page>
+            <HeaderLayout>
                 <ScrollingContent>
                     <Typography type="title" style={styles.title}>
                         Featured Items
                     </Typography>
                     <ItemList rootStore={rootStore} />
                 </ScrollingContent>
-            </Page>
+            </HeaderLayout>
         );
     }
 }

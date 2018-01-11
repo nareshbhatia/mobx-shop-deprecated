@@ -11,7 +11,7 @@ const styles = {
     }
 };
 
-class PageBase extends React.Component {
+class HeaderLayoutBase extends React.Component {
     static propTypes = {
         NavButton: PropTypes.func
     };
@@ -28,4 +28,4 @@ class PageBase extends React.Component {
     }
 }
 
-export const Page = withStyles(styles)(PageBase);
+export const HeaderLayout = withStyles(styles)(HeaderLayoutBase);

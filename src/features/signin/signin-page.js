@@ -4,7 +4,7 @@ import { withStyles } from 'material-ui/styles';
 import TextField from 'material-ui/TextField';
 import { action, observable } from 'mobx';
 import { inject, observer } from 'mobx-react';
-import { Page, ScrollingContent } from 'shared/components';
+import { HeaderLayout, ScrollingContent } from 'shared/components';
 
 const styles = theme => ({
     root: {
@@ -34,7 +34,7 @@ class SigninPageBase extends React.Component {
     render() {
         const { classes } = this.props;
         return (
-            <Page>
+            <HeaderLayout>
                 <ScrollingContent>
                     <div className={classes.root}>
                         <form
@@ -67,7 +67,7 @@ class SigninPageBase extends React.Component {
                         </form>
                     </div>
                 </ScrollingContent>
-            </Page>
+            </HeaderLayout>
         );
     }
 
