@@ -9,7 +9,7 @@ const styles = theme => ({
     }
 });
 
-class PageContentBase extends React.Component {
+class ScrollingContentBase extends React.Component {
     render() {
         const { classes, children } = this.props;
 
@@ -17,4 +17,4 @@ class PageContentBase extends React.Component {
     }
 }
 
-export const PageContent = withStyles(styles)(PageContentBase);
+export const ScrollingContent = withStyles(styles)(ScrollingContentBase);

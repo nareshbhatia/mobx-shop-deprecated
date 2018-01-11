@@ -1,7 +1,7 @@
 import React from 'react';
 import Typography from 'material-ui/Typography';
 import { inject } from 'mobx-react';
-import { Page, PageContent } from 'shared/components';
+import { Page, ScrollingContent } from 'shared/components';
 
 @inject('rootStore')
 export class ProfilePage extends React.Component {
@@ -11,9 +11,9 @@ export class ProfilePage extends React.Component {
 
         return (
             <Page>
-                <PageContent>
+                <ScrollingContent>
                     <Typography type="headline">{email}</Typography>
-                </PageContent>
+                </ScrollingContent>
             </Page>
         );
     }

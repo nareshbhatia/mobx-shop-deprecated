@@ -3,10 +3,11 @@ import IconButton from 'material-ui/IconButton';
 import Menu, { MenuItem } from 'material-ui/Menu';
 import MoreVertIcon from 'material-ui-icons/MoreVert';
 import { action, observable } from 'mobx';
-import { observer } from 'mobx-react';
+import { inject, observer } from 'mobx-react';
 import { newState } from 'mobx-state-router';
 import PropTypes from 'prop-types';
 
+@inject('rootStore')
 @observer
 export class HeaderMenu extends React.Component {
     static propTypes = {

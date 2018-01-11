@@ -1,11 +1,11 @@
 import React from 'react';
 import { withStyles } from 'material-ui/styles';
-import { Header, HeaderNavButton } from 'shared/components';
 import PropTypes from 'prop-types';
+import { Header } from './header';
 
 const styles = {
     root: {
-        height: '100%',
+        flex: 1,
         display: 'flex',
         flexDirection: 'column'
     }
@@ -13,19 +13,15 @@ const styles = {
 
 class PageBase extends React.Component {
     static propTypes = {
-        navButton: PropTypes.number.isRequired
-    };
-
-    static defaultProps = {
-        navButton: HeaderNavButton.home
+        NavButton: PropTypes.func
     };
 
     render() {
-        const { classes, children, navButton } = this.props;
+        const { classes, children, NavButton } = this.props;
 
         return (
             <div className={classes.root}>
-                <Header navButton={navButton} />
+                <Header NavButton={NavButton} />
                 {children}
             </div>
         );

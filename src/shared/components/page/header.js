@@ -1,0 +1,59 @@
+import React from 'react';
+import AppBar from 'material-ui/AppBar';
+import { withStyles } from 'material-ui/styles';
+import Typography from 'material-ui/Typography';
+import Toolbar from 'material-ui/Toolbar';
+import { newState } from 'mobx-state-router';
+import PropTypes from 'prop-types';
+import { HeaderMenu } from './header-menu';
+import { CartButton, DepartmentsButton, HomeButton } from './nav-buttons';
+
+const styles = {
+    title: {
+        flex: 1,
+        fontSize: 18
+    }
+};
+
+class HeaderBase extends React.Component {
+    static propTypes = {
+        NavButton: PropTypes.func.isRequired,
+        title: PropTypes.string.isRequired
+    };
+
+    static defaultProps = {
+        NavButton: HomeButton,
+        title: 'MobX Shop'
+    };
+
+    render() {
+        const { classes, NavButton, title } = this.props;
+
+        return (
+            <AppBar position="static">
+                <Toolbar>
+                    <NavButton />
+
+                    <Typography
+                        type="title"
+                        color="inherit"
+                        className={classes.title}
+                    >
+                        {title}
+                    </Typography>
+
+                    <DepartmentsButton />
+                    <CartButton />
+                    <HeaderMenu />
+                </Toolbar>
+            </AppBar>
+        );
+    }
+
+    handleCartClicked = () => {
+        const { rootStore: { routerStore } } = this.props;
+        routerStore.goTo(newState('shoppingCart'));
+    };
+}
+
+export const Header = withStyles(styles)(HeaderBase);

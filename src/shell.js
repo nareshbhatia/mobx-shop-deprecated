@@ -39,11 +39,15 @@ const styles = theme => ({
             WebkitOverflowScrolling: 'touch'
         },
         '#root': {
-            height: '100%'
+            height: '100%',
+            display: 'flex',
+            flexDirection: 'column'
         }
     },
     root: {
-        height: '100%'
+        flex: 1,
+        display: 'flex',
+        flexDirection: 'column'
     }
 });
 

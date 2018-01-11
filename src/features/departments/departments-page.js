@@ -1,6 +1,6 @@
 import React from 'react';
 import { inject } from 'mobx-react';
-import { ItemList, Page, PageContent } from 'shared/components';
+import { ItemList, Page, ScrollingContent } from 'shared/components';
 import { NavBar } from './navbar';
 
 @inject('rootStore')
@@ -11,9 +11,9 @@ export class DepartmentsPage extends React.Component {
         return (
             <Page>
                 <NavBar rootStore={rootStore} />
-                <PageContent>
+                <ScrollingContent>
                     <ItemList rootStore={rootStore} />
-                </PageContent>
+                </ScrollingContent>
             </Page>
         );
     }

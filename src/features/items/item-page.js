@@ -2,20 +2,15 @@ import React from 'react';
 import { withStyles } from 'material-ui/styles';
 import { inject, observer } from 'mobx-react';
 import {
-    HeaderNavButton,
+    BackButton,
     ItemInfo,
     ItemOrder,
     ItemPhoto,
     Page,
-    PageContent
+    ScrollingContent
 } from 'shared/components';
 
 const styles = theme => ({
-    content: {
-        flex: 1,
-        overflow: 'auto',
-        padding: theme.spacing.unit
-    },
     item: {
         display: 'flex',
         flexDirection: 'row',
@@ -31,18 +26,18 @@ class ItemPageBase extends React.Component {
         const { selectedItem: item } = rootStore.itemStore;
 
         if (!item) {
-            return <div className={classes.content}>Item not found</div>;
+            return <ScrollingContent>Item not found</ScrollingContent>;
         }
 
         return (
-            <Page navButton={HeaderNavButton.back}>
-                <PageContent>
+            <Page NavButton={BackButton}>
+                <ScrollingContent>
                     <div className={classes.item}>
                         <ItemPhoto photo={item.photo} />
                         <ItemInfo item={item} />
                         <ItemOrder rootStore={rootStore} item={item} />
                     </div>
-                </PageContent>
+                </ScrollingContent>
             </Page>
         );
     }
