@@ -5,14 +5,13 @@ import { CartStore } from './cart.store';
 import { ItemStore } from './item.store';
 import { routes } from './routes';
 
-const home = newState('home');
 const notFound = newState('notFound');
 
 export class RootStore {
     authStore = new AuthStore(this);
     cartStore = new CartStore(this);
     itemStore = new ItemStore(this);
-    routerStore = new RouterStore(this, routes, home, notFound);
+    routerStore = new RouterStore(this, routes, notFound);
 
     // Adapters for use by all stores
     adapters = {
