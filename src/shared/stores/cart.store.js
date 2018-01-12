@@ -13,9 +13,10 @@ export class CartStore {
 
     @computed
     get total() {
-        return this.orderItems.reduce((total, orderItem) => (
-            total + orderItem.item.price * orderItem.qty
-        ), 0);
+        return this.orderItems.reduce(
+            (total, orderItem) => total + orderItem.item.price * orderItem.qty,
+            0
+        );
     }
 
     constructor(rootStore) {

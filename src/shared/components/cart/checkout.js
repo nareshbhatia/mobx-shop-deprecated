@@ -50,9 +50,10 @@ class CheckoutBase extends React.Component {
         cartStore.clearCart();
         this.result.set({
             code: null,
-            message: 'Order placed. We’ll send a confirmation when your items ship.'
+            message:
+                'Order placed. We’ll send a confirmation when your items ship.'
         });
-    }
+    };
 }
 
 export const Checkout = withStyles(styles)(CheckoutBase);

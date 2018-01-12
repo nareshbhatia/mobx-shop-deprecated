@@ -1,4 +1,7 @@
-export { ScrollingContent } from './basics/content';
+export {
+    FullHeightVerticalContainer,
+    ScrollingContent
+} from './basics/containers';
 export { ResultPanel } from './basics/result-panel';
 export { Cart } from './cart/cart';
 export { Checkout } from './cart/checkout';

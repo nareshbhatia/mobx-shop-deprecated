@@ -40,13 +40,13 @@ export class ItemStore {
             });
     };
 
-    loadDepartmentItems = (department) => {
+    loadDepartmentItems = department => {
         return this.rootStore.adapters.catalogAdapter
-        .getDepartmentItems(department)
-        .then(items => {
-            this.setItems(items);
-            return true;
-        });
+            .getDepartmentItems(department)
+            .then(items => {
+                this.setItems(items);
+                return true;
+            });
     };
 
     selectItem(itemId) {

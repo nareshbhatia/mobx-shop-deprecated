@@ -89,7 +89,11 @@ class CartBase extends React.Component {
                     <div className={classes.orderTotal}>
                         Total: {CurrencyUtils.toString(orderTotal, 'USD')}
                     </div>
-                    <Button raised color="primary" onClick={this.handleCheckoutClicked}>
+                    <Button
+                        raised
+                        color="primary"
+                        onClick={this.handleCheckoutClicked}
+                    >
                         Proceed to checkout
                     </Button>
                 </div>
@@ -100,7 +104,7 @@ class CartBase extends React.Component {
     handleCheckoutClicked = () => {
         const { rootStore: { routerStore } } = this.props;
         routerStore.goTo(newState('checkout'));
-    }
+    };
 }
 
 export const Cart = withStyles(styles)(CartBase);
