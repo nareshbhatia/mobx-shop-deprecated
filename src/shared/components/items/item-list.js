@@ -28,6 +28,6 @@ export class ItemList extends React.Component {
 
     handleItemClicked = itemId => {
         const { rootStore: { routerStore } } = this.props;
-        routerStore.goTo(newState('items', { id: itemId }));
+        routerStore.goTo(newState('item', { id: itemId }));
     };
 }

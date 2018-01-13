@@ -31,6 +31,24 @@ export class ItemStore {
         this.selectedItem = item;
     }
 
+    selectItem = itemId => {
+        return this.rootStore.adapters.catalogAdapter
+            .getItem(itemId)
+            .then(item => {
+                this.setSelectedItem(item);
+                return true;
+            });
+    };
+
+    loadMatchingItems = searchKey => {
+        return this.rootStore.adapters.catalogAdapter
+            .getItems(searchKey)
+            .then(items => {
+                this.setItems(items);
+                return true;
+            });
+    };
+
     loadFeaturedItems = () => {
         return this.rootStore.adapters.catalogAdapter
             .getFeaturedItems()
@@ -48,13 +66,4 @@ export class ItemStore {
                 return true;
             });
     };
-
-    selectItem(itemId) {
-        return this.rootStore.adapters.catalogAdapter
-            .getItem(itemId)
-            .then(item => {
-                this.setSelectedItem(item);
-                return true;
-            });
-    }
 }

@@ -36,7 +36,7 @@ export const routes = [
         beforeEnter: checkForUserSignedIn
     },
     {
-        name: 'departments',
+        name: 'department',
         pattern: '/departments/:id',
         onEnter: (fromState, toState, routerStore) => {
             const { rootStore: { itemStore } } = routerStore;
@@ -47,6 +47,16 @@ export const routes = [
     },
     {
         name: 'items',
+        pattern: '/items',
+        onEnter: (fromState, toState, routerStore) => {
+            const { rootStore: { itemStore } } = routerStore;
+            return itemStore
+                .loadMatchingItems(toState.queryParams.q)
+                .then(() => ({ fromState, toState }));
+        }
+    },
+    {
+        name: 'item',
         pattern: '/items/:id',
         onEnter: (fromState, toState, routerStore) => {
             const { rootStore: { itemStore } } = routerStore;

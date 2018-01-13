@@ -80,7 +80,7 @@ export class DepartmentsButton extends React.Component {
 
     handleDepartmentsClicked = () => {
         const { rootStore: { routerStore } } = this.props;
-        routerStore.goTo(newState('departments', { id: 'electronics' }));
+        routerStore.goTo(newState('department', { id: 'electronics' }));
     };
 }
 

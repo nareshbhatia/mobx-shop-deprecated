@@ -4,7 +4,7 @@ import { ItemList, HeaderLayout, ScrollingContent } from 'shared/components';
 import { NavBar } from './navbar';
 
 @inject('rootStore')
-export class DepartmentsPage extends React.Component {
+export class DepartmentPage extends React.Component {
     render() {
         const { rootStore } = this.props;
 

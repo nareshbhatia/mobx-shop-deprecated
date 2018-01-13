@@ -37,7 +37,7 @@ class NavBarBase extends React.Component {
     onTabChange = (event, value) => {
         const { rootStore: { routerStore } } = this.props;
         const tab = this.value2Tab(value);
-        routerStore.goTo(newState('departments', { id: tab }));
+        routerStore.goTo(newState('department', { id: tab }));
     };
 
     tab2Value(tab) {

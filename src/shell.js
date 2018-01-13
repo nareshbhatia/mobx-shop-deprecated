@@ -5,9 +5,10 @@ import { RouterView } from 'mobx-state-router';
 // import DevTools from 'mobx-react-devtools';
 import {
     CheckoutPage,
-    DepartmentsPage,
+    DepartmentPage,
     HomePage,
     ItemPage,
+    ItemListPage,
     NotFoundPage,
     ProfilePage,
     ShoppingCart,
@@ -53,9 +54,10 @@ const styles = theme => ({
 
 const viewMap = {
     checkout: <CheckoutPage />,
-    departments: <DepartmentsPage />,
+    department: <DepartmentPage />,
     home: <HomePage />,
-    items: <ItemPage />,
+    item: <ItemPage />,
+    items: <ItemListPage />,
     notFound: <NotFoundPage />,
     profile: <ProfilePage />,
     shoppingCart: <ShoppingCart />,

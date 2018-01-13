@@ -7,6 +7,7 @@ import { newState } from 'mobx-state-router';
 import PropTypes from 'prop-types';
 import { HeaderMenu } from './header-menu';
 import { CartButton, DepartmentsButton, HomeButton } from './nav-buttons';
+import { SearchInput } from './search-input';
 
 const styles = {
     title: {
@@ -42,6 +43,7 @@ class HeaderBase extends React.Component {
                         {title}
                     </Typography>
 
+                    <SearchInput />
                     <DepartmentsButton />
                     <CartButton />
                     <HeaderMenu />
