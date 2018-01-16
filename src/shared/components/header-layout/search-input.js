@@ -4,7 +4,7 @@ import { fade } from 'material-ui/styles/colorManipulator';
 import { withStyles } from 'material-ui/styles';
 import { action, observable } from 'mobx';
 import { inject, observer } from 'mobx-react';
-import { newState } from 'mobx-state-router';
+import { RouterState } from 'mobx-state-router';
 
 const styles = theme => ({
     wrapper: {
@@ -91,7 +91,7 @@ class SearchInputBase extends React.Component {
         event.preventDefault();
 
         const { rootStore: { routerStore } } = this.props;
-        routerStore.goTo(newState('items', {}, { q: this.searchKey }));
+        routerStore.goTo(new RouterState('items', {}, { q: this.searchKey }));
     };
 }
 

@@ -3,7 +3,7 @@ import Button from 'material-ui/Button';
 import { withStyles } from 'material-ui/styles';
 import Typography from 'material-ui/Typography';
 import { observer } from 'mobx-react';
-import { newState } from 'mobx-state-router';
+import { RouterState } from 'mobx-state-router';
 import PropTypes from 'prop-types';
 import { ItemInfo, ItemPhoto } from 'shared/components';
 import { CurrencyUtils } from 'shared/utils';
@@ -103,7 +103,7 @@ class CartBase extends React.Component {
 
     handleCheckoutClicked = () => {
         const { rootStore: { routerStore } } = this.props;
-        routerStore.goTo(newState('checkout'));
+        routerStore.goTo(new RouterState('checkout'));
     };
 }
 

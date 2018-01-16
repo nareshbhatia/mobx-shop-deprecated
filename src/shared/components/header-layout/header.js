@@ -3,7 +3,7 @@ import AppBar from 'material-ui/AppBar';
 import { withStyles } from 'material-ui/styles';
 import Typography from 'material-ui/Typography';
 import Toolbar from 'material-ui/Toolbar';
-import { newState } from 'mobx-state-router';
+import { RouterState } from 'mobx-state-router';
 import PropTypes from 'prop-types';
 import { HeaderMenu } from './header-menu';
 import { CartButton, DepartmentsButton, HomeButton } from './nav-buttons';
@@ -54,7 +54,7 @@ class HeaderBase extends React.Component {
 
     handleCartClicked = () => {
         const { rootStore: { routerStore } } = this.props;
-        routerStore.goTo(newState('shoppingCart'));
+        routerStore.goTo(new RouterState('shoppingCart'));
     };
 }
 

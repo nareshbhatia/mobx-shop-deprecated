@@ -4,7 +4,7 @@ import Menu, { MenuItem } from 'material-ui/Menu';
 import MoreVertIcon from 'material-ui-icons/MoreVert';
 import { action, observable } from 'mobx';
 import { inject, observer } from 'mobx-react';
-import { newState } from 'mobx-state-router';
+import { RouterState } from 'mobx-state-router';
 import PropTypes from 'prop-types';
 
 @inject('rootStore')
@@ -69,7 +69,7 @@ export class HeaderMenu extends React.Component {
         this.open = false;
 
         const { rootStore: { routerStore } } = this.props;
-        routerStore.goTo(newState('profile'));
+        routerStore.goTo(new RouterState('profile'));
     };
 
     @action
@@ -77,7 +77,7 @@ export class HeaderMenu extends React.Component {
         this.open = false;
 
         const { rootStore: { routerStore } } = this.props;
-        routerStore.goTo(newState('signin'));
+        routerStore.goTo(new RouterState('signin'));
     };
 
     @action

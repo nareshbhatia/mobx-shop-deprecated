@@ -1,8 +1,8 @@
 import { action, observable } from 'mobx';
-import { newState } from 'mobx-state-router';
+import { RouterState } from 'mobx-state-router';
 
-const defaultState = newState('home');
-const signin = newState('signin');
+const defaultState = new RouterState('home');
+const signin = new RouterState('signin');
 
 export class AuthStore {
     rootStore;

@@ -1,4 +1,4 @@
-import { newState } from 'mobx-state-router';
+import { RouterState } from 'mobx-state-router';
 
 const checkForUserSignedIn = (fromState, toState, routerStore) => {
     const { rootStore: { authStore } } = routerStore;
@@ -8,7 +8,7 @@ const checkForUserSignedIn = (fromState, toState, routerStore) => {
         authStore.setSignInRedirect(toState);
         return Promise.reject({
             fromState: fromState,
-            toState: newState('signin')
+            toState: new RouterState('signin')
         });
     }
 };

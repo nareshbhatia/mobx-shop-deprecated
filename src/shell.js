@@ -27,7 +27,10 @@ const styles = theme => ({
         body: {
             height: '100%',
             margin: 0,
-            background: '#fff',
+            background:
+                theme.palette.type === 'light'
+                    ? theme.palette.types.light.background.default
+                    : theme.palette.types.dark.background.default,
             fontFamily: theme.typography.fontFamily,
             fontSize: theme.typography.fontSize,
             color: theme.palette.text.primary,

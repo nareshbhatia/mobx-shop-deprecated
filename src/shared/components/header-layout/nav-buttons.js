@@ -6,7 +6,7 @@ import ArrowBack from 'material-ui-icons/ArrowBack';
 import Apps from 'material-ui-icons/Apps';
 import ShoppingCart from 'material-ui-icons/ShoppingCart';
 import { inject } from 'mobx-react';
-import { newState } from 'mobx-state-router';
+import { RouterState } from 'mobx-state-router';
 import { history } from 'shared/utils';
 
 const styles = {
@@ -37,7 +37,7 @@ class HomeButtonBase extends React.Component {
 
     handleHomeClicked = () => {
         const { rootStore: { routerStore } } = this.props;
-        routerStore.goTo(newState('home'));
+        routerStore.goTo(new RouterState('home'));
     };
 }
 
@@ -80,7 +80,7 @@ export class DepartmentsButton extends React.Component {
 
     handleDepartmentsClicked = () => {
         const { rootStore: { routerStore } } = this.props;
-        routerStore.goTo(newState('department', { id: 'electronics' }));
+        routerStore.goTo(new RouterState('department', { id: 'electronics' }));
     };
 }
 
@@ -99,6 +99,6 @@ export class CartButton extends React.Component {
 
     handleCartClicked = () => {
         const { rootStore: { routerStore } } = this.props;
-        routerStore.goTo(newState('shoppingCart'));
+        routerStore.goTo(new RouterState('shoppingCart'));
     };
 }

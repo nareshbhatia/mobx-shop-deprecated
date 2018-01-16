@@ -2,7 +2,7 @@ import React from 'react';
 import { withStyles } from 'material-ui/styles';
 import Tabs, { Tab } from 'material-ui/Tabs';
 import { observer } from 'mobx-react';
-import { newState } from 'mobx-state-router';
+import { RouterState } from 'mobx-state-router';
 import PropTypes from 'prop-types';
 
 const styles = {
@@ -37,7 +37,7 @@ class NavBarBase extends React.Component {
     onTabChange = (event, value) => {
         const { rootStore: { routerStore } } = this.props;
         const tab = this.value2Tab(value);
-        routerStore.goTo(newState('department', { id: tab }));
+        routerStore.goTo(new RouterState('department', { id: tab }));
     };
 
     tab2Value(tab) {

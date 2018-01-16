@@ -11,9 +11,24 @@ import { history } from 'shared/utils';
 import { Shell } from './shell';
 
 const palette = {
-    primary: blue,
-    secondary: pink,
-    error: red
+    primary: {
+        main: blue[500]
+    },
+    secondary: {
+        main: pink.A400
+    },
+    error: {
+        main: red.A400
+    },
+    types: {
+        // Initialize light background to white (default is #fafafa)
+        // This allows pictures with white background blend in.
+        light: {
+            background: {
+                default: '#ffffff'
+            }
+        }
+    }
 };
 
 // Create the rootStore

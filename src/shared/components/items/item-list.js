@@ -1,6 +1,6 @@
 import React from 'react';
 import { observer } from 'mobx-react';
-import { newState } from 'mobx-state-router';
+import { RouterState } from 'mobx-state-router';
 import PropTypes from 'prop-types';
 import { Item } from './item';
 
@@ -28,6 +28,6 @@ export class ItemList extends React.Component {
 
     handleItemClicked = itemId => {
         const { rootStore: { routerStore } } = this.props;
-        routerStore.goTo(newState('item', { id: itemId }));
+        routerStore.goTo(new RouterState('item', { id: itemId }));
     };
 }

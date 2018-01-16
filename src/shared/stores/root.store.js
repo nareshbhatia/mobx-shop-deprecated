@@ -1,11 +1,11 @@
-import { newState, RouterStore } from 'mobx-state-router';
+import { RouterState, RouterStore } from 'mobx-state-router';
 import { CatalogAdapter } from 'shared/adapters';
 import { AuthStore } from './auth.store';
 import { CartStore } from './cart.store';
 import { ItemStore } from './item.store';
 import { routes } from './routes';
 
-const notFound = newState('notFound');
+const notFound = new RouterState('notFound');
 
 export class RootStore {
     authStore = new AuthStore(this);
