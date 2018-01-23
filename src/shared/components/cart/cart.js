@@ -12,7 +12,7 @@ const styles = theme => ({
     item: {
         display: 'flex',
         flexDirection: 'row',
-        borderBottom: `1px solid ${theme.palette.text.divider}`,
+        borderBottom: `1px solid ${theme.palette.divider}`,
         padding: theme.spacing.unit * 2
     },
     col: {

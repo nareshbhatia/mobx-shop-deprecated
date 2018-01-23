@@ -24,7 +24,7 @@ export class HeaderMenu extends React.Component {
         return (
             <div>
                 <IconButton
-                    color="contrast"
+                    color="inherit"
                     onClick={this.onMenuAnchorClick}
                     aria-owns="menu"
                     aria-haspopup="true"

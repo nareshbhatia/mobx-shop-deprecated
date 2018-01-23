@@ -26,7 +26,7 @@ class HomeButtonBase extends React.Component {
         return (
             <IconButton
                 className={classes.root}
-                color="contrast"
+                color="inherit"
                 onClick={this.handleHomeClicked}
                 aria-label="Home"
             >
@@ -53,7 +53,7 @@ class BackButtonBase extends React.Component {
         return (
             <IconButton
                 className={classes.root}
-                color="contrast"
+                color="inherit"
                 onClick={history.goBack}
                 aria-label="Back"
             >
@@ -72,7 +72,7 @@ export const BackButton = withStyles(styles)(BackButtonBase);
 export class DepartmentsButton extends React.Component {
     render() {
         return (
-            <Button color="contrast" onClick={this.handleDepartmentsClicked}>
+            <Button color="inherit" onClick={this.handleDepartmentsClicked}>
                 Departments
             </Button>
         );
@@ -91,7 +91,7 @@ export class DepartmentsButton extends React.Component {
 export class CartButton extends React.Component {
     render() {
         return (
-            <IconButton color="contrast" onClick={this.handleCartClicked}>
+            <IconButton color="inherit" onClick={this.handleCartClicked}>
                 <ShoppingCart />
             </IconButton>
         );
