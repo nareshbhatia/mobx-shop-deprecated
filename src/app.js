@@ -20,14 +20,10 @@ const palette = {
     error: {
         main: red.A400
     },
-    types: {
-        // Initialize light background to white (default is #fafafa)
-        // This allows pictures with white background blend in.
-        light: {
-            background: {
-                default: '#ffffff'
-            }
-        }
+    // Initialize background to white (default is #fafafa)
+    // This allows pictures with white background blend in.
+    background: {
+        default: '#ffffff'
     }
 };
 
