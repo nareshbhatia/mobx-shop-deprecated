@@ -25,9 +25,8 @@ export const routes = [
         pattern: '/',
         onEnter: (fromState, toState, routerStore) => {
             const { rootStore: { itemStore } } = routerStore;
-            return itemStore
-                .loadFeaturedItems()
-                .then(() => ({ fromState, toState }));
+            itemStore.loadFeaturedItems();
+            return Promise.resolve({ fromState, toState });
         }
     },
     {
@@ -40,9 +39,8 @@ export const routes = [
         pattern: '/departments/:id',
         onEnter: (fromState, toState, routerStore) => {
             const { rootStore: { itemStore } } = routerStore;
-            return itemStore
-                .loadDepartmentItems(toState.params.id)
-                .then(() => ({ fromState, toState }));
+            itemStore.loadDepartmentItems(toState.params.id);
+            return Promise.resolve({ fromState, toState });
         }
     },
     {
@@ -50,9 +48,8 @@ export const routes = [
         pattern: '/items',
         onEnter: (fromState, toState, routerStore) => {
             const { rootStore: { itemStore } } = routerStore;
-            return itemStore
-                .loadMatchingItems(toState.queryParams.q)
-                .then(() => ({ fromState, toState }));
+            itemStore.loadMatchingItems(toState.queryParams.q);
+            return Promise.resolve({ fromState, toState });
         }
     },
     {
@@ -60,9 +57,8 @@ export const routes = [
         pattern: '/items/:id',
         onEnter: (fromState, toState, routerStore) => {
             const { rootStore: { itemStore } } = routerStore;
-            return itemStore
-                .selectItem(toState.params.id)
-                .then(() => ({ fromState, toState }));
+            itemStore.selectItem(toState.params.id);
+            return Promise.resolve({ fromState, toState });
         }
     },
     { name: 'notFound', pattern: '/not-found' },

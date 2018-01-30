@@ -7,6 +7,15 @@ const styles = theme => ({
         display: 'flex',
         flexDirection: 'column'
     },
+    centeredContainer: {
+        flex: 1,
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        textAlign: 'center',
+        padding: theme.spacing.unit
+    },
     scrollingContent: {
         flex: 1,
         overflow: 'auto',
@@ -26,6 +35,15 @@ function FullHeightVerticalContainerBase({ classes, children }) {
 export const FullHeightVerticalContainer = withStyles(styles)(
     FullHeightVerticalContainerBase
 );
+
+/**
+ * CenteredContainer - parent should be flex-direction: column
+ */
+function CenteredContainerBase({ classes, children }) {
+    return <div className={classes.centeredContainer}>{children}</div>;
+}
+
+export const CenteredContainer = withStyles(styles)(CenteredContainerBase);
 
 /**
  * ScrollingContent

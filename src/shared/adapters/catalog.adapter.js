@@ -1,24 +1,35 @@
 import { items } from './items';
 
+// Simulate HTTP requests with a delay
+const DELAY = 200;
+
 export class CatalogAdapter {
-    getItem(id) {
-        return Promise.resolve(items.find(item => item.id === id));
+    getItem(itemStore, id) {
+        setTimeout(() => {
+            const result = items.find(item => item.id === id);
+            itemStore.setSelectedItem(result);
+        }, DELAY);
     }
 
-    getItems(searchKey) {
-        return Promise.resolve(
-            items.filter(item => this.matches(item, searchKey))
-        );
+    getItems(itemStore, searchKey) {
+        setTimeout(() => {
+            const result = items.filter(item => this.matches(item, searchKey));
+            itemStore.setItems(result);
+        }, DELAY);
     }
 
-    getFeaturedItems() {
-        return Promise.resolve(items.filter(item => item.isFeatured));
+    getFeaturedItems(itemStore) {
+        setTimeout(() => {
+            const result = items.filter(item => item.isFeatured);
+            itemStore.setItems(result);
+        }, DELAY);
     }
 
-    getDepartmentItems(department) {
-        return Promise.resolve(
-            items.filter(item => item.department === department)
-        );
+    getDepartmentItems(itemStore, department) {
+        setTimeout(() => {
+            const result = items.filter(item => item.department === department);
+            itemStore.setItems(result);
+        }, DELAY);
     }
 
     /**

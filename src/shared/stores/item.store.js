@@ -14,6 +14,7 @@ import { action, observable } from 'mobx';
  */
 export class ItemStore {
     rootStore;
+    @observable isLoading = true;
     @observable items = [];
     @observable selectedItem = null;
 
@@ -24,46 +25,47 @@ export class ItemStore {
     @action
     setItems(items) {
         this.items = items;
+        this.isLoading = false;
+    }
+
+    @action
+    clearItems() {
+        this.items = [];
+        this.isLoading = true;
     }
 
     @action
     setSelectedItem(item) {
         this.selectedItem = item;
+        this.isLoading = false;
+    }
+
+    @action
+    clearSelectedItem() {
+        this.selectedItem = null;
+        this.isLoading = true;
     }
 
     selectItem = itemId => {
-        return this.rootStore.adapters.catalogAdapter
-            .getItem(itemId)
-            .then(item => {
-                this.setSelectedItem(item);
-                return true;
-            });
+        this.clearSelectedItem();
+        this.rootStore.adapters.catalogAdapter.getItem(this, itemId);
     };
 
     loadMatchingItems = searchKey => {
-        return this.rootStore.adapters.catalogAdapter
-            .getItems(searchKey)
-            .then(items => {
-                this.setItems(items);
-                return true;
-            });
+        this.clearItems();
+        this.rootStore.adapters.catalogAdapter.getItems(this, searchKey);
     };
 
     loadFeaturedItems = () => {
-        return this.rootStore.adapters.catalogAdapter
-            .getFeaturedItems()
-            .then(items => {
-                this.setItems(items);
-                return true;
-            });
+        this.clearItems();
+        this.rootStore.adapters.catalogAdapter.getFeaturedItems(this);
     };
 
     loadDepartmentItems = department => {
-        return this.rootStore.adapters.catalogAdapter
-            .getDepartmentItems(department)
-            .then(items => {
-                this.setItems(items);
-                return true;
-            });
+        this.clearItems();
+        this.rootStore.adapters.catalogAdapter.getDepartmentItems(
+            this,
+            department
+        );
     };
 }

@@ -3,6 +3,7 @@ import { withStyles } from 'material-ui/styles';
 import { inject, observer } from 'mobx-react';
 import {
     BackButton,
+    BusyIndicator,
     HeaderLayout,
     ItemInfo,
     ItemOrder,
@@ -23,20 +24,20 @@ const styles = theme => ({
 class ItemPageBase extends React.Component {
     render() {
         const { classes, rootStore } = this.props;
-        const { selectedItem: item } = rootStore.itemStore;
-
-        if (!item) {
-            return <ScrollingContent>Item not found</ScrollingContent>;
-        }
+        const { isLoading, selectedItem: item } = rootStore.itemStore;
 
         return (
             <HeaderLayout NavButton={BackButton}>
                 <ScrollingContent>
-                    <div className={classes.item}>
-                        <ItemPhoto photo={item.photo} />
-                        <ItemInfo item={item} />
-                        <ItemOrder rootStore={rootStore} item={item} />
-                    </div>
+                    {isLoading ? (
+                        <BusyIndicator />
+                    ) : (
+                        <div className={classes.item}>
+                            <ItemPhoto photo={item.photo} />
+                            <ItemInfo item={item} />
+                            <ItemOrder rootStore={rootStore} item={item} />
+                        </div>
+                    )}
                 </ScrollingContent>
             </HeaderLayout>
         );

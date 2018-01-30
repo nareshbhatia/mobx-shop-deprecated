@@ -1,4 +1,6 @@
+export { BusyIndicator } from './basics/busy-indicator';
 export {
+    CenteredContainer,
     FullHeightVerticalContainer,
     ScrollingContent
 } from './basics/containers';
