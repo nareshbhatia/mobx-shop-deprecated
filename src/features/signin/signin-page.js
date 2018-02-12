@@ -60,7 +60,11 @@ class SigninPageBase extends React.Component {
                                 onChange={this.handlePasswordChange}
                             />
                             <div className={classes.buttonBar}>
-                                <Button raised color="primary" type="submit">
+                                <Button
+                                    variant="raised"
+                                    color="primary"
+                                    type="submit"
+                                >
                                     Sign In
                                 </Button>
                             </div>

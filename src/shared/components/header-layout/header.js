@@ -36,7 +36,7 @@ class HeaderBase extends React.Component {
                     <NavButton />
 
                     <Typography
-                        type="title"
+                        variant="title"
                         color="inherit"
                         className={classes.title}
                     >

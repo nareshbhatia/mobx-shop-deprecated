@@ -36,7 +36,11 @@ class CheckoutBase extends React.Component {
                     Order Total: {CurrencyUtils.toString(orderTotal, 'USD')}
                 </div>
 
-                <Button raised color="primary" onClick={this.handlePlaceOrder}>
+                <Button
+                    variant="raised"
+                    color="primary"
+                    onClick={this.handlePlaceOrder}
+                >
                     Place Order
                 </Button>
 

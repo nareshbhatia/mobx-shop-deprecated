@@ -3,13 +3,10 @@ import { RouterState } from 'mobx-state-router';
 const checkForUserSignedIn = (fromState, toState, routerStore) => {
     const { rootStore: { authStore } } = routerStore;
     if (authStore.user) {
-        return Promise.resolve({ fromState, toState });
+        return Promise.resolve();
     } else {
         authStore.setSignInRedirect(toState);
-        return Promise.reject({
-            fromState: fromState,
-            toState: new RouterState('signin')
-        });
+        return Promise.reject(new RouterState('signin'));
     }
 };
 
@@ -26,7 +23,7 @@ export const routes = [
         onEnter: (fromState, toState, routerStore) => {
             const { rootStore: { itemStore } } = routerStore;
             itemStore.loadFeaturedItems();
-            return Promise.resolve({ fromState, toState });
+            return Promise.resolve();
         }
     },
     {
@@ -40,7 +37,7 @@ export const routes = [
         onEnter: (fromState, toState, routerStore) => {
             const { rootStore: { itemStore } } = routerStore;
             itemStore.loadDepartmentItems(toState.params.id);
-            return Promise.resolve({ fromState, toState });
+            return Promise.resolve();
         }
     },
     {
@@ -49,7 +46,7 @@ export const routes = [
         onEnter: (fromState, toState, routerStore) => {
             const { rootStore: { itemStore } } = routerStore;
             itemStore.loadMatchingItems(toState.queryParams.q);
-            return Promise.resolve({ fromState, toState });
+            return Promise.resolve();
         }
     },
     {
@@ -58,7 +55,7 @@ export const routes = [
         onEnter: (fromState, toState, routerStore) => {
             const { rootStore: { itemStore } } = routerStore;
             itemStore.selectItem(toState.params.id);
-            return Promise.resolve({ fromState, toState });
+            return Promise.resolve();
         }
     },
     { name: 'notFound', pattern: '/not-found' },
