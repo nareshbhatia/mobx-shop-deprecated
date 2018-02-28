@@ -1,15 +1,26 @@
 import React from 'react';
 import IconButton from 'material-ui/IconButton';
 import Menu, { MenuItem } from 'material-ui/Menu';
+import { withStyles } from 'material-ui/styles';
+import LightbulbOutline from 'material-ui-icons/LightbulbOutline';
 import MoreVertIcon from 'material-ui-icons/MoreVert';
 import { action, observable } from 'mobx';
 import { inject, observer } from 'mobx-react';
 import { RouterState } from 'mobx-state-router';
 import PropTypes from 'prop-types';
 
+const styles = theme => ({
+    themeLabel: {
+        flex: 1
+    },
+    themeIcon: {
+        marginLeft: theme.spacing.unit * 2
+    }
+});
+
 @inject('rootStore')
 @observer
-export class HeaderMenu extends React.Component {
+class HeaderMenuBase extends React.Component {
     static propTypes = {
         rootStore: PropTypes.object.isRequired
     };
@@ -18,7 +29,7 @@ export class HeaderMenu extends React.Component {
     @observable open = false;
 
     render() {
-        const { rootStore: { authStore } } = this.props;
+        const { classes, rootStore: { authStore } } = this.props;
         const { user } = authStore;
 
         return (
@@ -48,6 +59,11 @@ export class HeaderMenu extends React.Component {
                     {user ? (
                         <MenuItem onClick={this.onSignOut}>Sign Out</MenuItem>
                     ) : null}
+
+                    <MenuItem onClick={this.onToggleTheme}>
+                        <span className={classes.themeLabel}>Toggle Theme</span>
+                        <LightbulbOutline className={classes.themeIcon} />
+                    </MenuItem>
                 </Menu>
             </div>
         );
@@ -73,6 +89,14 @@ export class HeaderMenu extends React.Component {
     };
 
     @action
+    onToggleTheme = () => {
+        this.open = false;
+
+        const { rootStore: { appStore } } = this.props;
+        appStore.toggleTheme();
+    };
+
+    @action
     onSignIn = () => {
         this.open = false;
 
@@ -88,3 +112,5 @@ export class HeaderMenu extends React.Component {
         authStore.signOut();
     };
 }
+
+export const HeaderMenu = withStyles(styles)(HeaderMenuBase);
