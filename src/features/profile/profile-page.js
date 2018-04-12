@@ -6,8 +6,12 @@ import { HeaderLayout, ScrollingContent } from 'shared/components';
 @inject('rootStore')
 export class ProfilePage extends React.Component {
     render() {
-        const { rootStore: { authStore } } = this.props;
-        const { user: { email } } = authStore;
+        const {
+            rootStore: { authStore }
+        } = this.props;
+        const {
+            user: { email }
+        } = authStore;
 
         return (
             <HeaderLayout>

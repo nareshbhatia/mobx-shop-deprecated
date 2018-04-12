@@ -1,7 +1,9 @@
 import { RouterState } from 'mobx-state-router';
 
 const checkForUserSignedIn = (fromState, toState, routerStore) => {
-    const { rootStore: { authStore } } = routerStore;
+    const {
+        rootStore: { authStore }
+    } = routerStore;
     if (authStore.user) {
         return Promise.resolve();
     } else {
@@ -21,7 +23,9 @@ export const routes = [
         name: 'home',
         pattern: '/',
         onEnter: (fromState, toState, routerStore) => {
-            const { rootStore: { itemStore } } = routerStore;
+            const {
+                rootStore: { itemStore }
+            } = routerStore;
             itemStore.loadFeaturedItems();
             return Promise.resolve();
         }
@@ -35,7 +39,9 @@ export const routes = [
         name: 'department',
         pattern: '/departments/:id',
         onEnter: (fromState, toState, routerStore) => {
-            const { rootStore: { itemStore } } = routerStore;
+            const {
+                rootStore: { itemStore }
+            } = routerStore;
             itemStore.loadDepartmentItems(toState.params.id);
             return Promise.resolve();
         }
@@ -44,7 +50,9 @@ export const routes = [
         name: 'items',
         pattern: '/items',
         onEnter: (fromState, toState, routerStore) => {
-            const { rootStore: { itemStore } } = routerStore;
+            const {
+                rootStore: { itemStore }
+            } = routerStore;
             itemStore.loadMatchingItems(toState.queryParams.q);
             return Promise.resolve();
         }
@@ -53,7 +61,9 @@ export const routes = [
         name: 'item',
         pattern: '/items/:id',
         onEnter: (fromState, toState, routerStore) => {
-            const { rootStore: { itemStore } } = routerStore;
+            const {
+                rootStore: { itemStore }
+            } = routerStore;
             itemStore.selectItem(toState.params.id);
             return Promise.resolve();
         }

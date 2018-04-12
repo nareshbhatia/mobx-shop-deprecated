@@ -12,7 +12,9 @@ export class ItemList extends React.Component {
     };
 
     render() {
-        const { rootStore: { itemStore } } = this.props;
+        const {
+            rootStore: { itemStore }
+        } = this.props;
         const { isLoading, items } = itemStore;
 
         if (isLoading) {
@@ -33,7 +35,9 @@ export class ItemList extends React.Component {
     }
 
     handleItemClicked = itemId => {
-        const { rootStore: { routerStore } } = this.props;
+        const {
+            rootStore: { routerStore }
+        } = this.props;
         routerStore.goTo(new RouterState('item', { id: itemId }));
     };
 }

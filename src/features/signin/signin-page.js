@@ -4,6 +4,7 @@ import { withStyles } from 'material-ui/styles';
 import TextField from 'material-ui/TextField';
 import { action, observable } from 'mobx';
 import { inject, observer } from 'mobx-react';
+import { RouterLink } from 'mobx-state-router';
 import { HeaderLayout, ScrollingContent } from 'shared/components';
 
 const styles = theme => ({
@@ -19,6 +20,15 @@ const styles = theme => ({
     buttonBar: {
         marginTop: theme.spacing.unit * 4,
         marginBottom: theme.spacing.unit * 4
+    },
+    footer: {
+        padding: theme.spacing.unit * 2,
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'center'
+    },
+    link: {
+        margin: theme.spacing.unit
     }
 });
 
@@ -71,6 +81,17 @@ class SigninPageBase extends React.Component {
                         </form>
                     </div>
                 </ScrollingContent>
+                <div className={classes.footer}>
+                    <RouterLink className={classes.link} routeName="home">
+                        Home
+                    </RouterLink>
+                    <RouterLink
+                        className={classes.link}
+                        routeName="shoppingCart"
+                    >
+                        Cart
+                    </RouterLink>
+                </div>
             </HeaderLayout>
         );
     }
@@ -87,7 +108,9 @@ class SigninPageBase extends React.Component {
 
     @action
     handleSubmit = event => {
-        const { rootStore: { authStore } } = this.props;
+        const {
+            rootStore: { authStore }
+        } = this.props;
 
         event.stopPropagation();
         event.preventDefault();

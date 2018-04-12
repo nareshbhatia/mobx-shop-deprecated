@@ -18,8 +18,13 @@ class NavBarBase extends React.Component {
     };
 
     render() {
-        const { classes, rootStore: { routerStore } } = this.props;
-        const { routerState: { params } } = routerStore;
+        const {
+            classes,
+            rootStore: { routerStore }
+        } = this.props;
+        const {
+            routerState: { params }
+        } = routerStore;
 
         return (
             <div className={classes.root}>
@@ -35,7 +40,9 @@ class NavBarBase extends React.Component {
     }
 
     onTabChange = (event, value) => {
-        const { rootStore: { routerStore } } = this.props;
+        const {
+            rootStore: { routerStore }
+        } = this.props;
         const tab = this.value2Tab(value);
         routerStore.goTo(new RouterState('department', { id: tab }));
     };

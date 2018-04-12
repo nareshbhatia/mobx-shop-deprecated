@@ -36,7 +36,9 @@ class HomeButtonBase extends React.Component {
     }
 
     handleHomeClicked = () => {
-        const { rootStore: { routerStore } } = this.props;
+        const {
+            rootStore: { routerStore }
+        } = this.props;
         routerStore.goTo(new RouterState('home'));
     };
 }
@@ -79,7 +81,9 @@ export class DepartmentsButton extends React.Component {
     }
 
     handleDepartmentsClicked = () => {
-        const { rootStore: { routerStore } } = this.props;
+        const {
+            rootStore: { routerStore }
+        } = this.props;
         routerStore.goTo(new RouterState('department', { id: 'electronics' }));
     };
 }
@@ -98,7 +102,9 @@ export class CartButton extends React.Component {
     }
 
     handleCartClicked = () => {
-        const { rootStore: { routerStore } } = this.props;
+        const {
+            rootStore: { routerStore }
+        } = this.props;
         routerStore.goTo(new RouterState('shoppingCart'));
     };
 }

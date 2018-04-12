@@ -53,7 +53,9 @@ class HeaderBase extends React.Component {
     }
 
     handleCartClicked = () => {
-        const { rootStore: { routerStore } } = this.props;
+        const {
+            rootStore: { routerStore }
+        } = this.props;
         routerStore.goTo(new RouterState('shoppingCart'));
     };
 }

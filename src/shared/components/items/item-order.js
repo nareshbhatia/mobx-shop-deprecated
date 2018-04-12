@@ -72,7 +72,10 @@ class ItemOrderBase extends React.Component {
     };
 
     handleAddToCart = () => {
-        const { rootStore: { cartStore }, item } = this.props;
+        const {
+            rootStore: { cartStore },
+            item
+        } = this.props;
         cartStore.addOrder(item, this.qty);
         this.result.set({
             code: null,

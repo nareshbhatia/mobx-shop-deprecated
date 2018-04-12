@@ -29,7 +29,10 @@ class HeaderMenuBase extends React.Component {
     @observable open = false;
 
     render() {
-        const { classes, rootStore: { authStore } } = this.props;
+        const {
+            classes,
+            rootStore: { authStore }
+        } = this.props;
         const { user } = authStore;
 
         return (
@@ -84,7 +87,9 @@ class HeaderMenuBase extends React.Component {
     onProfileClick = () => {
         this.open = false;
 
-        const { rootStore: { routerStore } } = this.props;
+        const {
+            rootStore: { routerStore }
+        } = this.props;
         routerStore.goTo(new RouterState('profile'));
     };
 
@@ -92,7 +97,9 @@ class HeaderMenuBase extends React.Component {
     onToggleTheme = () => {
         this.open = false;
 
-        const { rootStore: { appStore } } = this.props;
+        const {
+            rootStore: { appStore }
+        } = this.props;
         appStore.toggleTheme();
     };
 
@@ -100,7 +107,9 @@ class HeaderMenuBase extends React.Component {
     onSignIn = () => {
         this.open = false;
 
-        const { rootStore: { routerStore } } = this.props;
+        const {
+            rootStore: { routerStore }
+        } = this.props;
         routerStore.goTo(new RouterState('signin'));
     };
 
@@ -108,7 +117,9 @@ class HeaderMenuBase extends React.Component {
     onSignOut = () => {
         this.open = false;
 
-        const { rootStore: { authStore } } = this.props;
+        const {
+            rootStore: { authStore }
+        } = this.props;
         authStore.signOut();
     };
 }

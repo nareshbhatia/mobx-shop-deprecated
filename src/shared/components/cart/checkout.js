@@ -27,7 +27,10 @@ class CheckoutBase extends React.Component {
     @observable result = new Result();
 
     render() {
-        const { classes, rootStore: { cartStore } } = this.props;
+        const {
+            classes,
+            rootStore: { cartStore }
+        } = this.props;
         const { total: orderTotal } = cartStore;
 
         return (
@@ -50,7 +53,9 @@ class CheckoutBase extends React.Component {
     }
 
     handlePlaceOrder = () => {
-        const { rootStore: { cartStore } } = this.props;
+        const {
+            rootStore: { cartStore }
+        } = this.props;
         cartStore.clearCart();
         this.result.set({
             code: null,

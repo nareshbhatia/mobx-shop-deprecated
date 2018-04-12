@@ -90,7 +90,9 @@ class SearchInputBase extends React.Component {
         event.stopPropagation();
         event.preventDefault();
 
-        const { rootStore: { routerStore } } = this.props;
+        const {
+            rootStore: { routerStore }
+        } = this.props;
         routerStore.goTo(new RouterState('items', {}, { q: this.searchKey }));
     };
 }

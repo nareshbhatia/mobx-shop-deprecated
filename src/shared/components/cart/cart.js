@@ -50,7 +50,10 @@ class CartBase extends React.Component {
     };
 
     render() {
-        const { classes, rootStore: { cartStore } } = this.props;
+        const {
+            classes,
+            rootStore: { cartStore }
+        } = this.props;
         const { orderItems, total: orderTotal } = cartStore;
 
         if (orderItems.length === 0) {
@@ -102,7 +105,9 @@ class CartBase extends React.Component {
     }
 
     handleCheckoutClicked = () => {
-        const { rootStore: { routerStore } } = this.props;
+        const {
+            rootStore: { routerStore }
+        } = this.props;
         routerStore.goTo(new RouterState('checkout'));
     };
 }

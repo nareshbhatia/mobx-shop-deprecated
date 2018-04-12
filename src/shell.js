@@ -39,6 +39,14 @@ const styles = theme => ({
             // Use momentum-based scrolling on iOS devices
             WebkitOverflowScrolling: 'touch'
         },
+        a: {
+            color: theme.palette.primary.main,
+            textDecoration: 'none',
+            fontWeight: theme.typography.fontWeightMedium,
+            '&:hover': {
+                color: theme.palette.primary.dark
+            }
+        },
         '#root': {
             height: '100%',
             display: 'flex',
@@ -67,7 +75,10 @@ const viewMap = {
 @inject('rootStore')
 class ShellBase extends React.Component {
     render() {
-        const { classes, rootStore: { routerStore } } = this.props;
+        const {
+            classes,
+            rootStore: { routerStore }
+        } = this.props;
 
         return (
             <div className={classes.root}>
