@@ -1,7 +1,7 @@
 import React from 'react';
-import Button from 'material-ui/Button';
-import { withStyles } from 'material-ui/styles';
-import Typography from 'material-ui/Typography';
+import Button from '@material-ui/core/Button';
+import { withStyles } from '@material-ui/core/styles';
+import Typography from '@material-ui/core/Typography';
 import { observer } from 'mobx-react';
 import { RouterState } from 'mobx-state-router';
 import PropTypes from 'prop-types';

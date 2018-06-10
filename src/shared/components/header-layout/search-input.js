@@ -1,7 +1,7 @@
 import React from 'react';
-import SearchIcon from 'material-ui-icons/Search';
-import { fade } from 'material-ui/styles/colorManipulator';
-import { withStyles } from 'material-ui/styles';
+import SearchIcon from '@material-ui/icons/Search';
+import { fade } from '@material-ui/core/styles/colorManipulator';
+import { withStyles } from '@material-ui/core/styles';
 import { action, observable } from 'mobx';
 import { inject, observer } from 'mobx-react';
 import { RouterState } from 'mobx-state-router';

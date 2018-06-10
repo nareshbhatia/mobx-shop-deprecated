@@ -1,6 +1,7 @@
 import React from 'react';
-import { withStyles } from 'material-ui/styles';
-import Tabs, { Tab } from 'material-ui/Tabs';
+import { withStyles } from '@material-ui/core/styles';
+import Tab from '@material-ui/core/Tab';
+import Tabs from '@material-ui/core/Tabs';
 import { observer } from 'mobx-react';
 import { RouterState } from 'mobx-state-router';
 import PropTypes from 'prop-types';

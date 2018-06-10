@@ -1,6 +1,6 @@
 import React from 'react';
-import Snackbar from 'material-ui/Snackbar';
-import { withStyles } from 'material-ui/styles';
+import Snackbar from '@material-ui/core/Snackbar';
+import { withStyles } from '@material-ui/core/styles';
 import { observer } from 'mobx-react';
 import PropTypes from 'prop-types';
 

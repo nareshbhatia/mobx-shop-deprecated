@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import blue from 'material-ui/colors/blue';
-import pink from 'material-ui/colors/pink';
-import red from 'material-ui/colors/red';
-import createMuiTheme from 'material-ui/styles/createMuiTheme';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import blue from '@material-ui/core/colors/blue';
+import pink from '@material-ui/core/colors/pink';
+import red from '@material-ui/core/colors/red';
+import createMuiTheme from '@material-ui/core/styles/createMuiTheme';
+import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
 import { observer, Provider } from 'mobx-react';
 import { HistoryAdapter } from 'mobx-state-router';
 import { RootStore } from 'shared/stores';

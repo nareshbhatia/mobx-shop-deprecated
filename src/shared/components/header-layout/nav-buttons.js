@@ -1,10 +1,10 @@
 import React from 'react';
-import Button from 'material-ui/Button';
-import IconButton from 'material-ui/IconButton';
-import { withStyles } from 'material-ui/styles';
-import ArrowBack from 'material-ui-icons/ArrowBack';
-import Apps from 'material-ui-icons/Apps';
-import ShoppingCart from 'material-ui-icons/ShoppingCart';
+import Button from '@material-ui/core/Button';
+import IconButton from '@material-ui/core/IconButton';
+import { withStyles } from '@material-ui/core/styles';
+import ArrowBack from '@material-ui/icons/ArrowBack';
+import Apps from '@material-ui/icons/Apps';
+import ShoppingCart from '@material-ui/icons/ShoppingCart';
 import { inject } from 'mobx-react';
 import { RouterState } from 'mobx-state-router';
 import { history } from 'shared/utils';

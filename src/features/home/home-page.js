@@ -1,5 +1,5 @@
 import React from 'react';
-import Typography from 'material-ui/Typography';
+import Typography from '@material-ui/core/Typography';
 import { inject } from 'mobx-react';
 import { ItemList, HeaderLayout, ScrollingContent } from 'shared/components';
 

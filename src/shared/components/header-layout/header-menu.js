@@ -1,9 +1,10 @@
 import React from 'react';
-import IconButton from 'material-ui/IconButton';
-import Menu, { MenuItem } from 'material-ui/Menu';
-import { withStyles } from 'material-ui/styles';
-import LightbulbOutline from 'material-ui-icons/LightbulbOutline';
-import MoreVertIcon from 'material-ui-icons/MoreVert';
+import IconButton from '@material-ui/core/IconButton';
+import Menu from '@material-ui/core/Menu';
+import MenuItem from '@material-ui/core/MenuItem';
+import { withStyles } from '@material-ui/core/styles';
+import LightbulbOutline from '@material-ui/icons/LightbulbOutline';
+import MoreVertIcon from '@material-ui/icons/MoreVert';
 import { action, observable } from 'mobx';
 import { inject, observer } from 'mobx-react';
 import { RouterState } from 'mobx-state-router';

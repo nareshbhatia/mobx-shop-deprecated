@@ -1,5 +1,5 @@
 import React from 'react';
-import { withStyles } from 'material-ui/styles';
+import { withStyles } from '@material-ui/core/styles';
 import { inject } from 'mobx-react';
 import { RouterView } from 'mobx-state-router';
 // import DevTools from 'mobx-react-devtools';
