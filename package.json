@@ -29,7 +29,7 @@
     "history": "^4.7.2",
     "mobx": "^4.3.1",
     "mobx-react": "^5.2.2",
-    "mobx-state-router": "^3.1.1",
+    "mobx-state-router": "^3.1.2",
     "object-assign": "4.1.1",
     "promise": "8.0.1",
     "prop-types": "^15.6.1",
