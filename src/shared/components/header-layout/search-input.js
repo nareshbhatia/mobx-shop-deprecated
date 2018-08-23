@@ -60,7 +60,8 @@ const styles = theme => ({
 @inject('rootStore')
 @observer
 class SearchInputBase extends React.Component {
-    @observable searchKey = '';
+    @observable
+    searchKey = '';
 
     render() {
         const { classes } = this.props;

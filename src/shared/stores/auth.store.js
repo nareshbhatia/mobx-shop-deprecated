@@ -6,10 +6,12 @@ const signin = new RouterState('signin');
 
 export class AuthStore {
     rootStore;
-    @observable user = null; // example: { email: 'jdoe@gmail.com' }
+    @observable
+    user = null; // example: { email: 'jdoe@gmail.com' }
 
     // Where should we redirect after sign in
-    @observable signInRedirect = defaultState;
+    @observable
+    signInRedirect = defaultState;
 
     constructor(rootStore) {
         this.rootStore = rootStore;

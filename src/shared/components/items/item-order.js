@@ -26,8 +26,10 @@ class ItemOrderBase extends React.Component {
         item: PropTypes.object.isRequired
     };
 
-    @observable qty = 1;
-    @observable result = new Result();
+    @observable
+    qty = 1;
+    @observable
+    result = new Result();
 
     render() {
         const { classes } = this.props;

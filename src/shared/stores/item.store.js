@@ -14,9 +14,12 @@ import { action, observable } from 'mobx';
  */
 export class ItemStore {
     rootStore;
-    @observable isLoading = true;
-    @observable items = [];
-    @observable selectedItem = null;
+    @observable
+    isLoading = true;
+    @observable
+    items = [];
+    @observable
+    selectedItem = null;
 
     constructor(rootStore) {
         this.rootStore = rootStore;

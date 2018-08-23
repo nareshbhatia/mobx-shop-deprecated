@@ -24,7 +24,8 @@ class CheckoutBase extends React.Component {
         rootStore: PropTypes.object.isRequired
     };
 
-    @observable result = new Result();
+    @observable
+    result = new Result();
 
     render() {
         const {

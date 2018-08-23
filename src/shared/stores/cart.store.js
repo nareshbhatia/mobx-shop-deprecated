@@ -9,7 +9,8 @@ import { action, computed, observable } from 'mobx';
  */
 export class CartStore {
     rootStore;
-    @observable orderItems = [];
+    @observable
+    orderItems = [];
 
     @computed
     get total() {

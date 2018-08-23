@@ -2,7 +2,8 @@ import { action, observable } from 'mobx';
 
 export class AppStore {
     rootStore;
-    @observable paletteType = 'light';
+    @observable
+    paletteType = 'light';
 
     constructor(rootStore) {
         this.rootStore = rootStore;

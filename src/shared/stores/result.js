@@ -9,8 +9,10 @@ import { action, observable } from 'mobx';
  *     2. { code: 'PERMISSION_DENIED', message: 'Permission denied' }
  */
 export class Result {
-    @observable code = null;
-    @observable message = null;
+    @observable
+    code = null;
+    @observable
+    message = null;
 
     /**
      * Set the result with an object literal

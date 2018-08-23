@@ -3,12 +3,12 @@ import IconButton from '@material-ui/core/IconButton';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import { withStyles } from '@material-ui/core/styles';
-import LightbulbOutline from '@material-ui/icons/LightbulbOutline';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import { action, observable } from 'mobx';
 import { inject, observer } from 'mobx-react';
 import { RouterState } from 'mobx-state-router';
 import PropTypes from 'prop-types';
+import { LightbulbOutline } from '../icons/lightbulb-outline';
 
 const styles = theme => ({
     themeLabel: {
@@ -26,8 +26,10 @@ class HeaderMenuBase extends React.Component {
         rootStore: PropTypes.object.isRequired
     };
 
-    @observable anchorEl = undefined;
-    @observable open = false;
+    @observable
+    anchorEl = undefined;
+    @observable
+    open = false;
 
     render() {
         const {
