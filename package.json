@@ -19,9 +19,10 @@
     "analyze": "source-map-explorer build/static/js/main.*",
     "test": "node scripts/test.js --env=jsdom",
     "lint": "eslint '{src,stories}/**/*.js'",
-    "format": "prettier --print-width 80 --tab-width 4 --single-quote --write '{src,stories}/**/*.js'",
+    "format": "prettier --print-width 80 --tab-width 4 --single-quote --write '{src,stories,cypress}/**/*.js'",
     "precommit": "lint-staged",
-    "gen": "plop --plopfile generators/plopfile.js"
+    "gen": "plop --plopfile generators/plopfile.js",
+    "cypress:open": "cypress open"
   },
   "dependencies": {
     "@material-ui/core": "^3.1.0",
@@ -52,6 +53,7 @@
     "case-sensitive-paths-webpack-plugin": "2.1.1",
     "chalk": "1.1.3",
     "css-loader": "0.28.7",
+    "cypress": "^3.1.0",
     "del-cli": "^1.1.0",
     "dotenv": "4.0.0",
     "eslint": "4.10.0",

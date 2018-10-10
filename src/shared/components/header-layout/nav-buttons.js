@@ -74,7 +74,11 @@ export const BackButton = withStyles(styles)(BackButtonBase);
 export class DepartmentsButton extends React.Component {
     render() {
         return (
-            <Button color="inherit" onClick={this.handleDepartmentsClicked}>
+            <Button
+                color="inherit"
+                onClick={this.handleDepartmentsClicked}
+                aria-label="Departments"
+            >
                 Departments
             </Button>
         );
@@ -95,7 +99,11 @@ export class DepartmentsButton extends React.Component {
 export class CartButton extends React.Component {
     render() {
         return (
-            <IconButton color="inherit" onClick={this.handleCartClicked}>
+            <IconButton
+                color="inherit"
+                onClick={this.handleCartClicked}
+                aria-label="Go to shopping cart"
+            >
                 <ShoppingCart />
             </IconButton>
         );
