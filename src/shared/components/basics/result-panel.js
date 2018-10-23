@@ -9,7 +9,7 @@ const styles = theme => ({
         fontWeight: theme.typography.fontWeightMedium
     },
     error: {
-        color: theme.palette.error[500],
+        color: theme.palette.error.main,
         fontWeight: theme.typography.fontWeightMedium
     },
     close: {

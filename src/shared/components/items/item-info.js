@@ -13,7 +13,7 @@ const styles = theme => ({
     },
     name: {
         fontSize: 18,
-        color: theme.palette.primary[500]
+        color: theme.palette.primary.main
     },
     price: {
         marginTop: theme.spacing.unit * 2
