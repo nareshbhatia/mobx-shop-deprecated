@@ -41,7 +41,7 @@ class CheckoutBase extends React.Component {
                 </div>
 
                 <Button
-                    variant="raised"
+                    variant="contained"
                     color="primary"
                     onClick={this.handlePlaceOrder}
                 >

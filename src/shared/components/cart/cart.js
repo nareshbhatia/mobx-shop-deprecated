@@ -58,7 +58,7 @@ class CartBase extends React.Component {
 
         if (orderItems.length === 0) {
             return (
-                <Typography variant="title">
+                <Typography variant="h6">
                     Your shopping cart is empty
                 </Typography>
             );
@@ -93,7 +93,7 @@ class CartBase extends React.Component {
                         Total: {CurrencyUtils.toString(orderTotal, 'USD')}
                     </div>
                     <Button
-                        variant="raised"
+                        variant="contained"
                         color="primary"
                         onClick={this.handleCheckoutClicked}
                     >

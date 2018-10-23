@@ -21,6 +21,7 @@ historyAdapter.observeRouterStateChanges();
 class App extends Component {
     render() {
         const { paletteType } = rootStore.appStore;
+
         const palette = {
             primary: {
                 main: blue[500]
@@ -38,7 +39,12 @@ class App extends Component {
                 default: paletteType === 'light' ? '#ffffff' : '#303030'
             }
         };
-        const theme = createMuiTheme({ palette });
+
+        const typography = {
+            useNextVariants: true
+        };
+
+        const theme = createMuiTheme({ palette, typography });
 
         return (
             <MuiThemeProvider theme={theme}>

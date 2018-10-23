@@ -16,7 +16,7 @@ export class ProfilePage extends React.Component {
         return (
             <HeaderLayout>
                 <ScrollingContent>
-                    <Typography variant="headline">{email}</Typography>
+                    <Typography variant="h5">{email}</Typography>
                 </ScrollingContent>
             </HeaderLayout>
         );

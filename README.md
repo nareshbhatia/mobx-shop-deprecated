@@ -10,3 +10,13 @@ $ npm start
 ```
 
 Now point your browser to http://localhost:3000/.
+
+Running Integration Tests Using Cypress
+---------------------------------------
+```bash
+# Start the server in dev mode
+$ npm start 
+
+# In a different shell, start cypress and run the tests
+$ npm run cypress:open
+```

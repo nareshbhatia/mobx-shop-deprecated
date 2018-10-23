@@ -26,11 +26,7 @@ class ItemBase extends React.Component {
         const { classes, item } = this.props;
 
         return (
-            <div
-                key={item.id}
-                className={classes.root}
-                onClick={this.handleClick}
-            >
+            <div className={classes.root} onClick={this.handleClick}>
                 <ItemPhoto photo={item.photo} />
                 <ItemInfo item={item} />
             </div>

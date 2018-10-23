@@ -6,7 +6,7 @@ export function NotFoundPage() {
     return (
         <HeaderLayout>
             <ScrollingContent>
-                <Typography variant="title">Page Not Found</Typography>
+                <Typography variant="h6">Page Not Found</Typography>
             </ScrollingContent>
         </HeaderLayout>
     );

@@ -71,7 +71,7 @@ class SigninPageBase extends React.Component {
                             />
                             <div className={classes.buttonBar}>
                                 <Button
-                                    variant="raised"
+                                    variant="contained"
                                     color="primary"
                                     type="submit"
                                 >
